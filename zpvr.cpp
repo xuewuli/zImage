@@ -65,7 +65,7 @@ unsigned char * convertCCZBuffer( const unsigned char *buffer, size_t bufferLen,
         outHeader->sig[2] = 'Z';
         outHeader->sig[3] = 'z';
         outHeader->version = 0;
-        outHeader->compression_type = 0;
+        outHeader->compression_type = 0x0300;
         outHeader->len = header->len;
         outHeader->reserved = 0;
 
