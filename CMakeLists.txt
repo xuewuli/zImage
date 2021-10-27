@@ -37,5 +37,5 @@ target_include_directories(
 include(${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/zstd/CMakeLists.txt)
 include(${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/zlib/CMakeLists.txt)
 
-target_link_libraries(zimg libzstd_static zlib Threads::Threads)
+target_link_libraries(zimg libzstd_static zlibstatic Threads::Threads)
 

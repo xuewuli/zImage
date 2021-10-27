@@ -23,7 +23,7 @@ struct CCZHeader {
 extern "C" {
 #endif
 
-unsigned char * convertCCZBuffer( const unsigned char *buffer, size_t bufferLen, size_t &outSize )
+unsigned char *convertCCZBuffer( const unsigned char *buffer, size_t bufferLen, size_t &outSize )
 {
     if (bufferLen < sizeof(struct CCZHeader)) {
         return nullptr;
@@ -57,7 +57,7 @@ unsigned char * convertCCZBuffer( const unsigned char *buffer, size_t bufferLen,
 
         const size_t maxOutputBytes = ZSTD_compressBound(len + sizeof(struct CCZHeader));
 
-        auto output = (uint8_t*)calloc(1, maxOutputBytes);
+        auto output = (unsigned char *)calloc(1, maxOutputBytes);
 
         auto *outHeader = reinterpret_cast<struct CCZHeader*>(output);
         outHeader->sig[0] = 'C';
